@@ -8,7 +8,7 @@ paths:
     get:
       description: Return API status
       x-openapi-router-controller: vAPI
-      operationId: root.index
+      operationId: vAPI.index
       responses:
         '200':
           description: API status results
