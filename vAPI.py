@@ -370,13 +370,6 @@ if __name__ == "__main__":
     )
     parser = argparse.ArgumentParser()
     parser.add_argument( "-s", dest="oasfile", type=str, help="OpenAPI specification YAML file path", default="vAPI.yaml",)
-    parser.add_argument(
-        "-s",
-        dest="oasfile",
-        type=str,
-        help="OpenAPI specification YAML file path",
-        default="vAPI.yaml",
-    )
     args = parser.parse_args()
     oasfile = args.oasfile
     oasfile = args.oasfile
