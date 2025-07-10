@@ -381,11 +381,9 @@ if __name__ == "__main__":
     oasfile = args.oasfile
     oasfile = args.oasfile
     logging.info(
-        'app=vAPI action=success signature="Starting vAPI on port {} using {}"'.format(
-            myport, oasfile
-        )
+        'app=vAPI action=success signature="Starting vAPI on using {}"'.format(oasfile)
     )
-    logging.info("Starting vAPI on port {} using {}".format(myport, oasfile))
+    logging.info("Starting vAPI using {}".format(oasfile))
     logger = logging.getLogger("vAPI")
     try:
         app = connexion.FlaskApp(__name__, specification_dir="openapi/")
