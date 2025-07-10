@@ -385,6 +385,11 @@ if __name__ == "__main__":
         # app.add_api(oasfile, arguments={"title": "Vulnerable API"})
         # app.run()
         app = connexion.FlaskApp(__name__, specification_dir="openapi/")
+        flask_app = app.app
+
+        @flask_app.route("/")
+            def index():
+            return "API is running.", 200
         app.add_api(oasfile, arguments={"title": "Vulnerable API"})
         app.run(host="0.0.0.0", port=myport)
     except Exception as e:
