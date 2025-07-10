@@ -361,37 +361,24 @@ def create_widget_reservation():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(
-        filename="vAPI.log",
-        filemode="a",
-        format="%(asctime)s.%(msecs)03d %(levelname)s %(message)s",
-        datefmt="%Y-%m-%dT%H:%M:%S",
-        level=logging.INFO,
-    )
+    logging.basicConfig(...)
     myport = int(os.environ.get("PORT", 8081))
     parser = argparse.ArgumentParser()
-    parser.add_argument( "-s", dest="oasfile", type=str, help="OpenAPI specification YAML file path", default="vAPI.yaml",)
+    parser.add_argument("-s", dest="oasfile", type=str, help="OpenAPI specification YAML file path", default="vAPI.yaml")
     args = parser.parse_args()
     oasfile = args.oasfile
-    oasfile = args.oasfile
-    logging.info(
-        'app=vAPI action=success signature="Starting vAPI on using {}"'.format(oasfile)
-    )
-    logging.info("Starting vAPI using {}".format(oasfile))
-    logger = logging.getLogger("vAPI")
+    logging.info(...)
     try:
         print(f"Found port at {myport}")
-        # app = connexion.FlaskApp(__name__, specification_dir="openapi/")
-        # app.add_api(oasfile, arguments={"title": "Vulnerable API"})
-        # app.run()
         app = connexion.FlaskApp(__name__, specification_dir="openapi/")
         flask_app = app.app
 
         @flask_app.route("/")
         def index():
             return "API is running.", 200
+
         app.add_api(oasfile, arguments={"title": "Vulnerable API"})
         app.run(host="0.0.0.0", port=myport)
     except Exception as e:
-        logging.error('app=vAPI action=failure signature="Starting vAPI failed with exception: {}"'.format(str(e)))
+        logging.error(...)
         print("Starting vAPI failed with exception: {}".format(e))
