@@ -380,6 +380,7 @@ if __name__ == "__main__":
     logging.info("Starting vAPI using {}".format(oasfile))
     logger = logging.getLogger("vAPI")
     try:
+        print(f"Found port at {myport}")
         # app = connexion.FlaskApp(__name__, specification_dir="openapi/")
         # app.add_api(oasfile, arguments={"title": "Vulnerable API"})
         # app.run()
