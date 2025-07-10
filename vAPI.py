@@ -367,7 +367,8 @@ if __name__ == "__main__":
     parser.add_argument("-s", dest="oasfile", type=str, help="OpenAPI specification YAML file path", default="vAPI.yaml")
     args = parser.parse_args()
     oasfile = args.oasfile
-    logging.info(...)
+    logging.info("Starting vAPI using {}".format(oasfile))
+    logger = logging.getLogger("vAPI")
     try:
         print(f"Found port at {myport}")
         app = connexion.FlaskApp(__name__, specification_dir="openapi/")
