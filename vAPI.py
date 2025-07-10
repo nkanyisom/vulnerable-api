@@ -386,7 +386,7 @@ if __name__ == "__main__":
         # app.run()
         app = connexion.FlaskApp(__name__, specification_dir="openapi/")
         app.add_api(oasfile, arguments={"title": "Vulnerable API"})
-        app.run(port=myport)
+        app.run(host="0.0.0.0", port=myport)
     except Exception as e:
         logging.error('app=vAPI action=failure signature="Starting vAPI failed with exception: {}"'.format(str(e)))
         print("Starting vAPI failed with exception: {}".format(e))
