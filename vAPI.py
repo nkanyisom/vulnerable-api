@@ -361,7 +361,13 @@ def create_widget_reservation():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(...)
+    logging.basicConfig(
+        filename="vAPI.log",
+        filemode="a",
+        format="%(asctime)s.%(msecs)03d %(levelname)s %(message)s",
+        datefmt="%Y-%m-%dT%H:%M:%S",
+        level=logging.INFO,
+    )
     myport = int(os.environ.get("PORT", 8081))
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", dest="oasfile", type=str, help="OpenAPI specification YAML file path", default="vAPI.yaml")
